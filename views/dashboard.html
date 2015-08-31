@@ -1,0 +1,42 @@
+<h4>User: {{user.email}}</h4>
+
+<!-- schema -->
+<form ng-repeat="entry in schema" 
+      class="card" 
+      ng-submit="add(entry)"
+      name="form-{{entry.name}}" novalidate>
+  <div class="feedback" ng-class="{'active':interaction && entry.value}">
+    <h4>{{entry.name}} saved successfully!</h4>
+  </div>
+  <h3>Entry: {{entry.name}}</h3>
+  <input ng-if="entry.type == 'text'" 
+         type="text" 
+         ng-model="entry.value" 
+         placeholder="{{entry.unit}}" required />
+  <input ng-if="entry.type == 'number'"
+         type="number"
+         value="entry.default"
+         step="entry.step"
+         ng-model="entry.value" 
+         placeholder="{{entry.unit}}" required />
+  <textarea ng-if="entry.hasOwnProperty('description')" 
+            ng-model="entry.description" 
+            placeholder="description" 
+            cols="10" 
+            rows="4"></textarea>
+  <input date-input ng-model="entry.timestamp">          
+  <button type="submit" 
+          class="api-button">ADD</button>
+</form>
+<!-- /schema -->
+
+<footer>
+  <ul>
+    <li>
+      <a href="" ng-click="clearDatabase()">Clear DB</a>
+    </li>
+    <li>
+      <a href="" ng-click="showDatabase()">Show DB</a>
+    </li>
+  </ul>
+</footer>

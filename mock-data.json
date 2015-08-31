@@ -1,0 +1,33 @@
+[
+  {
+    "type": "run",
+    "timestamp": 543564565756,
+    "unit": "minute",
+    "value": "0:34",
+    "description": "some extra text..."
+  },
+  {
+    "type": "expense",
+    "timestamp": 53465789894,
+    "unit":"Forint",
+    "value": "2490",
+    "description": "some extra text..."
+  },
+  {
+    "type": "tracking",
+    "timestamp": 548986367888,
+    "units": [
+      {
+        "type": "distance",
+        "unit": "kilometer",
+        "value": "7.26"  
+      },
+      {
+        "type": "time",
+        "unit": "minute",
+        "value": "2:04"
+      }  
+    ],
+    "description": "lat:47.567, lng:19.342"
+  }
+]
